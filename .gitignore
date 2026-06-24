@@ -7,8 +7,7 @@ node_modules/
 # logs
 npm-debug.log*
 # environment
-.env
-.env.production
+.env*
 .vercel/
 # macOS / editor
 .DS_Store
