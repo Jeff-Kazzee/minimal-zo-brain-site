@@ -9,6 +9,7 @@ npm-debug.log*
 # environment
 .env
 .env.production
+.vercel/
 # macOS / editor
 .DS_Store
 .vscode/*
