@@ -1,0 +1,96 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaButtons from '../components/CtaButtons.astro';
+import { withBase } from '../consts';
+---
+
+<Base title="How It Works" description="You hand Zo a spec. Zo interviews you, proposes a plan, and builds your brain only after you approve.">
+  <h1>How It Works</h1>
+  <p class="lede">
+    Minimal Zo Brain is a specification-first setup system for Zo Computer. The
+    gist is one file — <code>spec.md</code> — that tells Zo how to
+    interview you and build a personal, AI-readable brain from your real context.
+    Here’s exactly what happens.
+  </p>
+
+  <div class="callout callout--define">
+    <p>
+      <strong>What’s a “gist”?</strong> A tiny GitHub page for one file. You
+      don’t need to understand GitHub. Open the gist in Zo Computer — or copy the
+      raw Markdown into a folder — and ask Zo to read <code>spec.md</code>. That’s
+      the whole setup.
+    </p>
+  </div>
+
+  <h2>The setup sequence</h2>
+  <p>Zo creates nothing until it has learned your context and you’ve approved a plan.</p>
+  <ol class="steps">
+    <li><strong>Zo reads <code>spec.md</code>.</strong> This is the instruction set — how to interview you and what to build.</li>
+    <li><strong>Zo asks exactly five setup questions.</strong> The first one is just how deep you want to go: Starter, Beginner, Intermediate, or Pro.</li>
+    <li><strong>Zo identifies your context areas</strong> from your own words — a business, a job hunt, client work, family logistics, health, a creative project, research, a relationship, operations, learning, or anything else that matters to you.</li>
+    <li><strong>Zo confirms your selected depth</strong> so the structure matches how much you actually want today.</li>
+    <li><strong>Zo proposes a file and folder plan</strong> and explains what each part is for.</li>
+    <li><strong>You approve. Then Zo builds the brain.</strong> Nothing is written before this point.</li>
+  </ol>
+
+  <h2>The five questions</h2>
+  <p>The exact questions flex with the spec, but they cover the same ground:</p>
+  <ol>
+    <li>How deep do you want to go — Starter, Beginner, Intermediate, or Pro?</li>
+    <li>What parts of your life, work, or use case should this brain organize?</li>
+    <li>Who and what is connected to that work — people, clients, businesses, projects?</li>
+    <li>What source material do you already have — notes, emails, docs, transcripts, links, rough thoughts?</li>
+    <li>What should Zo help with, and what must it never do without your approval?</li>
+  </ol>
+
+  <h2>How you use it after setup</h2>
+  <p>
+    From then on, Zo doesn’t re-read your whole brain to answer a question. It
+    reads the index and routing files first, then opens the smallest relevant
+    context area. You just ask normal questions — <em>“what matters this week?”</em>,
+    <em>“what did we decide about this client?”</em> — and Zo knows where to look.
+  </p>
+
+  <h2>Key concepts, in plain language</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Context areas</h3>
+      <p>Your own domains of life and work. Not generic categories — businesses, projects, clients, relationships, family, health, learning, research, operations, creative work, or anything else you name.</p>
+    </div>
+    <div class="card">
+      <h3>Sources</h3>
+      <p>Evidence: meeting notes, email summaries, docs, transcripts, tasks, links, rough notes, screenshots, copied context. Sources are not final truth.</p>
+    </div>
+    <div class="card">
+      <h3>Current truth</h3>
+      <p>The working summary you’re willing to act on now. Updated carefully, and kept separate from raw sources.</p>
+    </div>
+    <div class="card">
+      <h3>Relationships</h3>
+      <p>How context connects: a person works on a project, a client belongs to a business, a source supports a claim, a decision affects a project.</p>
+    </div>
+    <div class="card">
+      <h3>Memory</h3>
+      <p>What changed over time and should survive future sessions — global, per area, per project, per relationship, or per workflow.</p>
+    </div>
+    <div class="card">
+      <h3>Knowledge graph <span style="color:var(--muted)">(Pro)</span></h3>
+      <p>At Pro depth, the brain can behave like a personal knowledge graph: typed entities, relationships, provenance, conflicts, validation, and routed reads — while staying Markdown-first.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p>
+      Pro mode uses the same principles as a serious agent workspace — routed
+      context, graph checks, provenance, relationship edges, bounded reads, and
+      validation. You never have to understand that theory to benefit from it.
+      Zo handles the structure; you keep feeding it real context.
+    </p>
+  </div>
+
+  <h2>Try it</h2>
+  <CtaButtons note="Open the gist, then ask Zo: “Read spec.md and help me set up my Minimal Zo Brain.”" />
+  <p>
+    Not sure how deep to go? <a href={withBase('/depths/')}>Compare the four depths →</a>
+  </p>
+</Base>

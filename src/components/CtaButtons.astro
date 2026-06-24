@@ -1,0 +1,29 @@
+---
+import { CTA } from '../consts';
+
+interface Props {
+  /** Show the copy/fork gist button. */
+  template?: boolean;
+  /** Show the raw spec.md button. */
+  download?: boolean;
+  /** Optional note rendered under the buttons. */
+  note?: string;
+}
+
+const { template = true, download = true, note } = Astro.props;
+---
+
+<div class="cta-row">
+  <a class="btn btn--primary" href={CTA.spec} target="_blank" rel="noopener">
+    Read the full spec
+  </a>
+  {template && (
+    <a class="btn" href={CTA.copy} target="_blank" rel="noopener">
+      Fork or copy the gist
+    </a>
+  )}
+  {download && (
+    <a class="btn" href={CTA.download} target="_blank" rel="noopener">Open raw spec.md</a>
+  )}
+</div>
+{note && <p class="cta-note">{note}</p>}

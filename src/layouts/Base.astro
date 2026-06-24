@@ -1,0 +1,97 @@
+---
+import { NAV, SITE_TITLE, SITE_TAGLINE, SITE_DESCRIPTION, CTA, withBase } from '../consts';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = SITE_DESCRIPTION } = Astro.props;
+const pageTitle = title === SITE_TITLE ? title : `${title} — ${SITE_TITLE}`;
+
+// Active-link detection that tolerates the configured base path.
+const current = Astro.url.pathname.replace(/\/+$/, '') || '/';
+function isCurrent(href: string): boolean {
+  const target = withBase(href).replace(/\/+$/, '') || '/';
+  return current === target;
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="brand">
+          <a href={withBase('/')}>{SITE_TITLE}</a>
+          <small>{SITE_TAGLINE}</small>
+        </div>
+        <div class="header-cta">
+          <a class="btn btn--primary btn--sm" href={CTA.spec} target="_blank" rel="noopener">
+            Read<span class="long">&nbsp;the full spec</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <nav aria-label="Guide pages">
+          <p class="eyebrow">Guides</p>
+          <ol>
+            {NAV.map((item) => (
+              <li>
+                <a
+                  href={withBase(item.href)}
+                  aria-current={isCurrent(item.href) ? 'page' : undefined}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      </aside>
+
+      <main id="main" class="content">
+        <slot />
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <h2>Give Zo one spec. Get a brain that grows with you.</h2>
+        <p>
+          Open the spec gist in Zo Computer and ask Zo to read <code>spec.md</code>.
+          It interviews you and builds the brain from your real context — no
+          template to fill in, nothing written until you approve.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn--primary" href={CTA.spec} target="_blank" rel="noopener">Read the full spec</a>
+          <a class="btn" href={CTA.copy} target="_blank" rel="noopener">Fork or copy the gist</a>
+          <a class="btn" href={CTA.download} target="_blank" rel="noopener">Open raw spec.md</a>
+        </div>
+        <p class="next-links">
+          {NAV.map((item) => (
+            <a href={withBase(item.href)}>{item.label}</a>
+          ))}
+        </p>
+        <small>
+          Minimal Zo Brain is a specification-first setup system for Zo Computer.
+          Your brain is plain Markdown you own.
+        </small>
+      </div>
+    </footer>
+  </body>
+</html>

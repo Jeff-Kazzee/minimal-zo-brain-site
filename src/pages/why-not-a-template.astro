@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaButtons from '../components/CtaButtons.astro';
+import { withBase } from '../consts';
+---
+
+<Base title="Why It’s Not a Template" description="A template freezes a structure before it knows anything about you. A spec lets the structure form around what you actually need.">
+  <h1>Why It’s Not a Template</h1>
+  <p class="lede">
+    Most “second brain” kits hand you a folder full of empty pages and fake
+    sample clients, then leave you to figure out what goes where. You spend an
+    afternoon decorating someone else’s structure before you get a single useful
+    answer. Minimal Zo Brain works the other way around.
+  </p>
+
+  <div class="callout">
+    <p>
+      <strong>You give Zo a strong specification. Zo builds the right structure
+      with you, from your real context.</strong>
+    </p>
+  </div>
+
+  <h2>What that changes</h2>
+  <ul>
+    <li><strong>No prefilled example projects.</strong> No sample “Acme Corp” client. It starts from <em>your</em> life and work.</li>
+    <li><strong>No guessing which folder something belongs in.</strong> Zo proposes the plan and explains every file.</li>
+    <li><strong>No “one size organizes all.”</strong> Your depth choice controls the complexity — and you can grow later.</li>
+    <li><strong>No lock-in or special software.</strong> It’s Markdown files you own, in your own workspace.</li>
+  </ul>
+
+  <h2>Template vs. spec</h2>
+  <div class="contrast">
+    <div class="panel panel--cold">
+      <span class="panel__tag">A generic template</span>
+      <p class="answer">
+        Freezes a structure before it knows anything about you. You adapt your
+        life to its folders, clean out fake examples, and hope you filed things
+        in the right place.
+      </p>
+    </div>
+    <div class="panel panel--warm">
+      <span class="panel__tag">A specification</span>
+      <p class="answer">
+        Lets the structure form around what you actually need. Zo interviews you,
+        finds your real context areas, proposes a plan at your chosen depth, and
+        builds only after you approve.
+      </p>
+    </div>
+  </div>
+
+  <p>
+    That’s the whole shift: <strong>don’t hand people a folder. Give Zo a spec, and
+    let the brain grow from real context.</strong>
+  </p>
+
+  <h2>See it for yourself</h2>
+  <CtaButtons note="The gist is basically one file — spec.md — and that’s the point." />
+  <p>
+    Curious what Zo builds? <a href={withBase('/what-zo-creates/')}>What Zo creates →</a>
+  </p>
+</Base>

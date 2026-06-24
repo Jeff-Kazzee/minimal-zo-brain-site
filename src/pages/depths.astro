@@ -1,0 +1,171 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaButtons from '../components/CtaButtons.astro';
+
+// Folder trees are rendered as text via {expressions} so Astro doesn't try to
+// parse "<area-slug>" as an HTML element.
+const starterTree = `brain/
+  current.md
+  sources.md
+  tasks.md
+  log.md`;
+
+const beginnerTree = `brain/
+  AGENTS.md
+  index.md
+  current.md
+  log.md
+  context/
+  projects/
+  people/
+  sources/
+  tasks.md
+  memory/`;
+
+const intermediateTree = `brain/
+  AGENTS.md
+  index.md
+  log.md
+  shared/
+  areas/
+    <area-slug>/
+      current.md
+      projects/
+      people/
+      sources/
+      decisions.md
+      tasks.md
+      memory.md
+  relationships/`;
+
+const proTree = `brain/
+  AGENTS.md
+  index.md
+  log.md
+  graph.md
+  ontology.md
+  areas/
+    <area-slug>/
+      current.md
+      sources/
+      decisions/
+      tasks/
+      memory/
+  entities/
+    people/
+    organizations/
+    projects/
+    concepts/
+  relationships/
+    edges.md
+    open-conflicts.md
+  sources/
+    raw/
+    processed/
+  workflows/
+  checks/`;
+---
+
+<Base title="Depths" description="Starter, Beginner, Intermediate, Pro — pick how much structure Zo builds today. You can grow later.">
+  <h1>Depths</h1>
+  <p class="lede">
+    You choose how deep to go on the first screen of setup — and there’s no wrong
+    answer. The depth just controls how much Zo builds today. Start at Starter and
+    grow to Pro whenever you need more.
+  </p>
+
+  <div class="next-links">
+    <a href="#starter">Starter</a>
+    <a href="#beginner">Beginner</a>
+    <a href="#intermediate">Intermediate</a>
+    <a href="#pro">Pro</a>
+  </div>
+
+  <h2 id="starter">Starter — useful in minutes</h2>
+  <p>
+    <strong>Who it’s for:</strong> Anyone who wants the fastest possible first
+    brain for one area of work or life. You’re not trying to organize everything —
+    you just want AI to stop forgetting the one thing you care about right now.
+  </p>
+  <p><strong>What Zo asks you:</strong></p>
+  <ul>
+    <li>What one thing should this brain help with first?</li>
+    <li>What should Zo remember?</li>
+    <li>What source material do you already have?</li>
+    <li>What must Zo never do without your approval?</li>
+  </ul>
+  <p><strong>What Zo creates:</strong></p>
+  <pre><code>{starterTree}</code></pre>
+  <p>
+    <strong>How you use it:</strong> Paste or describe one real thing — a meeting
+    note, a messy plan, a client situation, a task list. Zo turns it into a
+    working summary of what’s true now (<code>current.md</code>), a record of
+    where it came from (<code>sources.md</code>), a few next actions
+    (<code>tasks.md</code>), and a note of what changed (<code>log.md</code>).
+  </p>
+  <div class="callout">
+    <p>Starter is for getting useful in minutes. It isn’t trying to organize your whole life — and that’s exactly why it works.</p>
+  </div>
+
+  <h2 id="beginner">Beginner — enough structure to stop starting cold</h2>
+  <p>
+    <strong>Who it’s for:</strong> You have one to three areas you want AI to
+    remember, and you’d like simple folders without learning a knowledge-management
+    system.
+  </p>
+  <p><strong>What Zo creates:</strong></p>
+  <pre><code>{beginnerTree}</code></pre>
+  <p>
+    <strong>How you use it:</strong> Zo builds a basic map of your world and
+    separates the obvious things — people, projects, sources, tasks — while
+    keeping a lightweight memory of what’s changed. Now you can ask real
+    questions: <em>“What matters this week?”</em> or <em>“What did we decide about
+    this client?”</em> — and Zo knows where to look instead of guessing.
+  </p>
+  <div class="callout">
+    <p>Beginner gives you just enough structure for AI to be genuinely helpful, without asking you to become a filing expert first.</p>
+  </div>
+
+  <h2 id="intermediate">Intermediate — where the brain becomes yours</h2>
+  <p>
+    <strong>Who it’s for:</strong> You’ve got multiple parts of life or work that
+    need to stay separate but connected. For example: two businesses; client work
+    plus family logistics; a job hunt plus creative projects; a health plan plus a
+    learning plan; operations plus relationships.
+  </p>
+  <p><strong>What Zo creates:</strong></p>
+  <pre><code>{intermediateTree}</code></pre>
+  <p>
+    <strong>How you use it:</strong> Zo routes to the right area <em>before</em> it
+    answers, so your second business never bleeds into your first. Things that
+    span everything live in <code>shared/</code>. The important cross-area
+    dependencies — this client belongs to that business, this decision affects
+    that project — live in <code>relationships/</code>. Each area keeps its own
+    current truth, sources, tasks, decisions, and memory.
+  </p>
+  <div class="callout">
+    <p>Intermediate is where the brain stops being generic and starts matching your actual life — keeping your businesses, people, and responsibilities separate without losing the connections between them.</p>
+  </div>
+
+  <h2 id="pro">Pro — when the brain becomes infrastructure</h2>
+  <p>
+    <strong>Who it’s for:</strong> You want a serious personal knowledge system or
+    agent workspace — deep continuity, and reasoning that can follow how
+    everything connects.
+  </p>
+  <p><strong>What Zo creates:</strong></p>
+  <pre><code>{proTree}</code></pre>
+  <p>
+    <strong>How you use it:</strong> Zo tracks typed entities (people,
+    organizations, projects, concepts), the relationships between them, where each
+    fact came from (provenance), open conflicts it hasn’t resolved, validation
+    checks, and workflow memory. Instead of re-reading the whole brain, Zo follows
+    the graph and routed context — reading only what a question actually needs.
+  </p>
+  <div class="callout">
+    <p>Pro is for when your brain becomes infrastructure. It supports knowledge-graph behavior and the same routed-context principles as a serious agent workspace — while still being nothing more exotic than local Markdown files you own.</p>
+  </div>
+
+  <h2>Ready to pick a depth?</h2>
+  <CtaButtons note="Zo asks for your depth as the first setup question — and you can change it later." />
+</Base>

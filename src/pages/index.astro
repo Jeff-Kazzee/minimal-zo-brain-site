@@ -1,0 +1,84 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaButtons from '../components/CtaButtons.astro';
+import { SITE_TITLE, withBase } from '../consts';
+---
+
+<Base title={SITE_TITLE}>
+  <h1>Give Zo one file. Get a brain built around your real life.</h1>
+  <p class="lede">
+    Minimal Zo Brain isn’t another notes template with fake sample clients. It’s
+    a single spec that Zo Computer reads, then interviews you and builds a
+    personal, AI-readable memory from your actual work, projects, people, and
+    decisions. Start in minutes. Grow it into a full knowledge system only when
+    you want to.
+  </p>
+
+  <CtaButtons note="The full setup lives in one file: spec.md. Open the gist in Zo Computer, or copy the raw Markdown into a new folder." />
+
+  <h2>You don’t fill out a template. You hand Zo a spec.</h2>
+  <ol class="steps">
+    <li><strong>Open the spec gist in Zo Computer.</strong> The important file is <code>spec.md</code>.</li>
+    <li><strong>Ask Zo:</strong> <em>“Read spec.md and help me set up my Minimal Zo Brain.”</em></li>
+    <li><strong>Answer five short questions</strong> — starting with how deep you want to go.</li>
+    <li><strong>Zo finds your real context areas</strong> from your own words.</li>
+    <li><strong>Zo proposes a plan</strong> — every file and folder, and what it’s for.</li>
+    <li><strong>You approve. Zo builds it.</strong> Nothing is written until you say yes.</li>
+  </ol>
+  <p>
+    After that, every session reads your brain’s index first, jumps to the
+    smallest relevant area, and helps without making you re-explain your world.
+    <a href={withBase('/how-it-works/')}>See how it works in detail →</a>
+  </p>
+
+  <h2>Pick a depth. Change it whenever you want.</h2>
+  <p>
+    You choose how much structure you want — and there’s no wrong answer. Starter
+    can become Pro later.
+  </p>
+  <div class="grid">
+    <div class="card"><h3>Starter</h3><p>Four simple files. Useful in minutes, for one thing.</p></div>
+    <div class="card"><h3>Beginner</h3><p>A light folder map for one to three areas AI should remember.</p></div>
+    <div class="card"><h3>Intermediate</h3><p>Separate-but-connected context for the different parts of your life and work.</p></div>
+    <div class="card"><h3>Pro</h3><p>A typed knowledge graph with provenance and checks, for when the brain becomes infrastructure.</p></div>
+  </div>
+  <p><a href={withBase('/depths/')}>See the full walkthroughs →</a></p>
+
+  <h2>Everything is Markdown you own.</h2>
+  <p>
+    Your brain forms around <em>your</em> context areas — a business, a job hunt,
+    family logistics, a creative project. Zo keeps your <strong>sources</strong>
+    (the evidence) separate from your <strong>current truth</strong> (what you’ll
+    act on now), tracks <strong>tasks</strong> and <strong>decisions</strong> with
+    their reasons, remembers the <strong>relationships</strong> between things,
+    and keeps a <strong>memory</strong> of what changed. At Pro depth, all of that
+    becomes a real personal knowledge graph. Nothing is written until you approve
+    the plan.
+    <a href={withBase('/what-zo-creates/')}>See what Zo creates →</a>
+  </p>
+
+  <h2>This isn’t a template.</h2>
+  <p>
+    Most “second brain” kits hand you empty folders and fake sample clients, then
+    leave you to decorate someone else’s structure before you get a single useful
+    answer. Minimal Zo Brain works the other way around: <strong>you give Zo a
+    strong spec, and Zo builds the right structure with you, from your real
+    context.</strong> No prefilled projects. No guessing where things go. No
+    lock-in — just Markdown files you own.
+    <a href={withBase('/why-not-a-template/')}>Why a spec beats a template →</a>
+  </p>
+
+  <h2>Give Zo one spec. Get a brain that grows with you.</h2>
+  <p>
+    Start small today. Let it become a serious knowledge system when you’re ready.
+  </p>
+  <CtaButtons template={false} download={false} note="Opens the full spec gist. Then just ask Zo to read spec.md." />
+
+  <p class="next-links">
+    <a href={withBase('/how-it-works/')}>How it works</a>
+    <a href={withBase('/depths/')}>Depths</a>
+    <a href={withBase('/what-zo-creates/')}>What Zo creates</a>
+    <a href={withBase('/why-not-a-template/')}>Why it’s not a template</a>
+    <a href={withBase('/faq/')}>FAQ</a>
+  </p>
+</Base>

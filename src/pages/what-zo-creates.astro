@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaButtons from '../components/CtaButtons.astro';
+import { withBase } from '../consts';
+---
+
+<Base title="What Zo Creates" description="Plain Markdown you own: your real context areas, sources, current truth, tasks, decisions, relationships, and memory.">
+  <h1>What Zo Creates</h1>
+  <p class="lede">
+    Everything Zo builds is plain Markdown — readable files you own, in your Zo
+    workspace. No database, no special software. Depending on the depth you pick,
+    your brain can include any of the following.
+  </p>
+
+  <h2>The building blocks</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Context areas</h3>
+      <p>Your own domains of life and work — not generic categories. A business, a job search, family logistics, a health plan, a research thread, a creative project. Whatever you named.</p>
+    </div>
+    <div class="card">
+      <h3>Sources</h3>
+      <p>The evidence behind what you know: meeting notes, email summaries, docs, transcripts, links, rough notes, screenshots, copied context. Kept separate from truth, because evidence isn’t always right.</p>
+    </div>
+    <div class="card">
+      <h3>Current truth</h3>
+      <p>The working summary you’re willing to act on now. Updated carefully — never silently rewritten from a raw source.</p>
+    </div>
+    <div class="card">
+      <h3>Tasks &amp; decisions</h3>
+      <p>Next actions, plus the choices you’ve made with the reasons attached, so they don’t quietly reverse later.</p>
+    </div>
+    <div class="card">
+      <h3>Relationships</h3>
+      <p>How things connect. A person works on a project. A client belongs to a business. A source supports a claim. At Pro depth, these become real graph edges.</p>
+    </div>
+    <div class="card">
+      <h3>Memory</h3>
+      <p>What changed over time and should survive into future sessions — global, per area, per project, per relationship, or per workflow.</p>
+    </div>
+    <div class="card">
+      <h3>Routing &amp; index files</h3>
+      <p>So Zo reads the smallest relevant slice of your brain instead of the whole thing every time.</p>
+    </div>
+    <div class="card">
+      <h3>Knowledge graph <span style="color:var(--muted)">(Pro)</span></h3>
+      <p>Typed entities, provenance, open conflicts, and validation checks, with routed reads. Optional, and only if you want it.</p>
+    </div>
+  </div>
+
+  <div class="callout callout--ok">
+    <p>
+      And nothing gets written until you approve the plan. Zo proposes the files
+      and folders, explains what each one is for, and waits for your yes.
+    </p>
+  </div>
+
+  <h2>It compounds through small updates</h2>
+  <p>
+    The brain gets sharper every time you leave one thing behind after a useful
+    session — any one of these counts:
+  </p>
+  <ul>
+    <li>one source,</li>
+    <li>one update to current truth,</li>
+    <li>one task,</li>
+    <li>one decision,</li>
+    <li>one relationship,</li>
+    <li>one memory entry,</li>
+    <li>or, at Pro depth, one graph or provenance update.</li>
+  </ul>
+
+  <h2>See the exact files per depth</h2>
+  <p>
+    The precise folder layout depends on the depth you choose.
+    <a href={withBase('/depths/')}>See the folder trees for Starter, Beginner, Intermediate, and Pro →</a>
+  </p>
+
+  <CtaButtons />
+</Base>
